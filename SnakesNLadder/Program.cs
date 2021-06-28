@@ -16,6 +16,7 @@ namespace SnakesNLadder
             var list = new List<string> { "No Play", "Ladder", "Snake" };
 
             //Conditions for user options
+            int count= 0;
             while (playerPosition <= 100)
             {
                 rollDice = random.Next(1, 7);
@@ -44,8 +45,11 @@ namespace SnakesNLadder
                 //Print to Console
                 Console.WriteLine("\n");
                 Console.WriteLine("Player current position : " + playerPosition);
+                count++;
             }
             Console.WriteLine("Final position is :" + playerPosition);
+            Console.WriteLine("Number of times game played:" + count);
+
 
 
         }
