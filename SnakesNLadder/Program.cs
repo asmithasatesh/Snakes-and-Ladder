@@ -10,23 +10,38 @@ namespace SnakesNLadder
             //local variable
             int rollDice,playerPosition = 0;
 
-            //Create random number to roll dice
+            //To generate random number
             Random random = new Random();
-            rollDice = random.Next(1, 7);
-            Console.WriteLine("Dice number is : " + rollDice);
+            //List to check options
+            var list = new List<string> { "No Play", "Ladder", "Snake" };
 
-            //Print user options
-            Console.WriteLine("Player checks options 1.No Play  2.Ladder   3.Snake");
-            var list = new List<string> { "No Play", "Ladder","Snake"};
-            //Use random to check user option
-            int index = random.Next(list.Count);
             //Conditions for user options
-            if (list[index] == "Ladder") playerPosition += rollDice;
-            if (list[index] == "Snake") playerPosition -= rollDice;
-            //Print to Console
-            Console.WriteLine("Player option is : " + list[index]);
-            Console.WriteLine("\n");
-            Console.WriteLine("Player current position : " + playerPosition);
+            while (playerPosition <= 100)
+            {
+                rollDice = random.Next(1, 7);
+                Console.WriteLine("Dice number is : " + rollDice);
+
+                //Print user options
+                Console.WriteLine("Player checks options 1.No Play  2.Ladder   3.Snake");
+            
+                //Use random to check user option
+                int index = random.Next(list.Count);
+                Console.WriteLine("Player option is : " + list[index]);
+                if (playerPosition + rollDice < 100  )
+                {
+                    if (list[index] == "Ladder") playerPosition += rollDice;
+                    if (list[index] == "Snake") playerPosition -= rollDice;
+                }
+              
+                if (playerPosition < 0)
+                {
+                    playerPosition = 0;
+                }
+                //Print to Console
+                Console.WriteLine("\n");
+                Console.WriteLine("Player current position : " + playerPosition);
+            }
+            Console.WriteLine("Final position is :" + playerPosition);
 
 
         }
