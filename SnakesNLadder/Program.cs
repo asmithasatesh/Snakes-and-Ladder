@@ -32,7 +32,11 @@ namespace SnakesNLadder
                     if (list[index] == "Ladder") playerPosition += rollDice;
                     if (list[index] == "Snake") playerPosition -= rollDice;
                 }
-              
+                else if (playerPosition + rollDice == 100)
+                {
+                    playerPosition += rollDice;
+                    break;
+                }
                 if (playerPosition < 0)
                 {
                     playerPosition = 0;
