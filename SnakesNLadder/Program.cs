@@ -6,7 +6,10 @@ namespace SnakesNLadder
     {
         static void Main(string[] args)
         {
-            int playerPosition = 0;
+            int rollDice,playerPosition = 0;
+            Random random = new Random();
+            rollDice = random.Next(1, 7);
+            Console.WriteLine("Dice number is : " + rollDice);
         }
     }
 }
