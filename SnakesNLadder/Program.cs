@@ -6,7 +6,7 @@ namespace SnakesNLadder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int playerPosition = 0;
         }
     }
 }
