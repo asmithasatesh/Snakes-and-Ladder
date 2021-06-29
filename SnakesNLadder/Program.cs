@@ -15,6 +15,8 @@ namespace SnakesNLadder
             //List to check options
             var list = new List<string> { "No Play", "Ladder", "Snake" };
 
+            //Count Number of moved made
+            int count=0;
             //Conditions for user options
             while (playerPosition <= 100)
             {
@@ -32,7 +34,7 @@ namespace SnakesNLadder
                     if (list[index] == "Ladder") playerPosition += rollDice;
                     if (list[index] == "Snake") playerPosition -= rollDice;
                 }
-                else if (playerPosition + rollDice == 100)
+                else if (playerPosition + rollDice == 100 && list[index] == "Ladder")
                 {
                     playerPosition += rollDice;
                     break;
@@ -44,8 +46,11 @@ namespace SnakesNLadder
                 //Print to Console
                 Console.WriteLine("\n");
                 Console.WriteLine("Player current position : " + playerPosition);
+                count++;
             }
             Console.WriteLine("Final position is :" + playerPosition);
+            Console.WriteLine("Total moves made :" + count);
+
 
 
         }
