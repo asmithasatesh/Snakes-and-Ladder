@@ -20,9 +20,11 @@ namespace SnakesNLadder
             var list = new List<string> { "No Play", "Ladder","Snake"};
             //Use random to check user option
             int index = random.Next(list.Count);
+
             //Conditions for user options
             if (list[index] == "Ladder") playerPosition += rollDice;
             if (list[index] == "Snake") playerPosition -= rollDice;
+
             //Print to Console
             Console.WriteLine("Player option is : " + list[index]);
             Console.WriteLine("\n");
