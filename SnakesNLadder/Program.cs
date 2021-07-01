@@ -27,7 +27,7 @@ namespace SnakesNLadder
                 //Use random to check user option
                 int index = random.Next(list.Count);
                 Console.WriteLine("Player option is : " + list[index]);
-                if (playerPosition + rollDice < 100  )
+                if (playerPosition + rollDice <= 100  )
                 {
                     if (list[index] == "Ladder") playerPosition += rollDice;
                     if (list[index] == "Snake") playerPosition -= rollDice;
@@ -37,6 +37,8 @@ namespace SnakesNLadder
                 {
                     playerPosition = 0;
                 }
+
+                if (playerPosition == 100) break;
                 //Print to Console
                 Console.WriteLine("\n");
                 Console.WriteLine("Player current position : " + playerPosition);
