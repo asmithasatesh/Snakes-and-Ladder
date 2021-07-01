@@ -47,6 +47,7 @@ namespace SnakesNLadder
                 Console.WriteLine("Player current position : " + playerPosition);
                 count++;
             }
+            //Count total moves made
             Console.WriteLine("Final position is :" + playerPosition);
             Console.WriteLine("Number of times game played:" + count);
 
