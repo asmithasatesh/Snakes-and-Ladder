@@ -33,6 +33,7 @@ namespace SnakesNLadder
                     if (list[index] == "Snake") playerPosition -= rollDice;
                 }
               
+                //If position less than 0, Reset to 0
                 if (playerPosition < 0)
                 {
                     playerPosition = 0;
